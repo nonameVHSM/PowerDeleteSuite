@@ -508,7 +508,7 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           }
-        }), 6.0 * 1000).then(function() {
+        }), 6000).then(function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
