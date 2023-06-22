@@ -497,7 +497,7 @@ var pd = {
     },
     edit: function (item) {
       if (pd.performActions) {
-        $.ajax({
+        setTimeout($.ajax({
           url: '/api/editusertext',
           method: 'post',
           data: {
@@ -508,7 +508,7 @@ var pd = {
             uh: pd.config.uh,
             renderstyle: 'html'
           }
-        }).then(function() {
+        }), 6.0 * 1000).then(function() {
           pd.task.items[0].pdEdited = true;
           pd.actions.children.handleSingle();
         }, function () {
